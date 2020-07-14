@@ -4,6 +4,7 @@
 #include "Util.h"
 #include "csgo.h"
 #include "globals.h"
+
 // Entity Definitions
 BOOL Entity::isDormant()
 {

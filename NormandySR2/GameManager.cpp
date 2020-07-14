@@ -10,18 +10,20 @@ GameManager::GameManager()
 	UNICODE_STRING EngineDll{};
 	RtlInitUnicodeString(&EngineDll, ENGINE_DLL);
 
+	// Get engine.dll module
 	do {
 		status = LdrGetDllHandle(nullptr, nullptr, &EngineDll, &engineBaseAddr);
 	} while (!NT_SUCCESS(status));
 	clientStateAddr = read<LPVOID>(engineBaseAddr, signatures::dwClientState);
 
+	// Get client.dll module
 	UNICODE_STRING ClientDll{};
 	RtlInitUnicodeString(&ClientDll, CLIENT_DLL);
 	do {
 		status = LdrGetDllHandle(nullptr, nullptr, &ClientDll, &clientBaseAddr);
 	} while (!NT_SUCCESS(status));
 
-	// Setup global entities
+	// Setup interfaces
 	g::iClientEntityList = GetInterface<IClientEntityList>((HMODULE)clientBaseAddr, "VClientEntityList003");
 	g::iVEngineClient = GetInterface<IVEngineClient>((HMODULE)engineBaseAddr, "VEngineClient014");
 	g::iEngineTrace = GetInterface<IEngineTrace>((HMODULE)engineBaseAddr, "EngineTraceClient004");
@@ -30,6 +32,8 @@ GameManager::GameManager()
 	g::iBaseClientDLL = GetInterface<IBaseClientDLL>((HMODULE)clientBaseAddr, "VClient018");
 	g::iClientMode = **reinterpret_cast<IClientMode***>((*(uintptr_t**)g::iBaseClientDLL)[10] + 0x5);
 	g::iClientModeVT.Init((LPVOID**)g::iClientMode);
+
+	// Hook create move
 	g::iClientModeVT.HookFunction(CSGOHooks::NewCreateMove, hookIndex::CreateMove);
 }
 

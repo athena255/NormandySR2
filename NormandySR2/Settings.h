@@ -1,15 +1,16 @@
 #pragma once
+// Name of the engine module
 #define ENGINE_DLL L"engine.dll"
+// Name of the client module
 #define CLIENT_DLL L"client.dll"
 
-#define TRIGGER_DELAY 150 // 150 ms delay +/- jitter
-#define TRIGGER_JITTER 20 // 20 % jitter
-#define SHOOT_DURATION 20 // 20 ms
-
+// The minimum acceptable FOV when Aimbot searches for a visible entity
 #define MIN_FOV 22.0f
+
 // When health is lower than this, Aimbot will not require the crosshairs to mark targets
 #define MIN_HEALTH 50
 
+// Key bindings
 #define TOGGLE_AIMBOT VK_UP
 #define TOGGLE_WALLHACK VK_DOWN
 #define TOGGLE_AUTOSTRAFE VK_RIGHT
