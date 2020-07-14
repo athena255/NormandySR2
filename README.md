@@ -15,7 +15,7 @@ Features
 - Silent Aim (Up arrow)
 - Wallhack (Down arrow)
 - Autostrafe (Right arrow)
-- Trigger bot (Left arrow)
+- Trigger bot (Left arrow) -- likely to be detected
 - Exit Cheat (End)
 
 Silent Aim
