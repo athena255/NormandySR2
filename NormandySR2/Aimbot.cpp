@@ -21,8 +21,8 @@ VOID Aimbot::execute()
 		if (!wouldHit)
 		{
 			Vector predicted = targetEntity->GetPredicted(targetEntity->GetBonePosition(HitBox));
-			g::userCmd->viewangles = CalcAngle(localPlayer->GetPredicted(localPlayer->GetEyePosition()), predicted).Clamp();
-			//g::userCmd->viewangles = CalcAngle(localPlayer->GetEyePosition(), targetEntity->GetBonePosition(HitBox)).Clamp();
+			//g::userCmd->viewangles = CalcAngle(localPlayer->GetPredicted(localPlayer->GetEyePosition()), predicted).Clamp();
+			g::userCmd->viewangles = CalcAngle(localPlayer->GetEyePosition(), targetEntity->GetBonePosition(HitBox)).Clamp();
 		}
 	}
 }
