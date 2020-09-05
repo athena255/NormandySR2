@@ -1,7 +1,7 @@
 # NormandySR2
-Internal CSGO Cheat (Undetected)
+Threadless Internal CSGO Cheat (Undetected)
 
-- Does not create a new thread in the game process
+- Does not create a new thread in the game process!
 - Hooks CreateMove in IClientShared and executes enabled cheats everytime this function is called
 - Exiting the cheat amounts to restoring the old CreateMove function
 - valve_sdk headers are modified from CSGOSimple (https://github.com/spirthack/CSGOSimple/tree/master/CSGOSimple)
