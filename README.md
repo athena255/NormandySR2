@@ -32,3 +32,14 @@ Allies are highlighted in blue.
 Enemies are highligted in pink/purple.
 Visible enemies will glow brighter than invisible enemies. 
 If SilentAim is enabled, then the currently targeted enemy will glow red rather than pink/purple
+
+Screenshots
+------------
+
+Current target glows red
+
+<img width="805" alt="Capture1" src="https://user-images.githubusercontent.com/14916525/92313135-12eee380-ef96-11ea-89df-d141f3f7d9c4.PNG">
+
+Visible enemies glow brighter
+
+<img width="802" alt="visiblenemiesglow" src="https://user-images.githubusercontent.com/14916525/92313138-1e420f00-ef96-11ea-835d-0543e0760b5c.PNG">
